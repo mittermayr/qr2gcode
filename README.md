@@ -2,6 +2,8 @@
 
 Generate a QR code and convert to executable Gcode for CNC machines
 
+![a sample image of a CNC-milled QR Code](https://raw.githubusercontent.com/mittermayr/qr2gcode/master/sample_code.jpg)
+
 ## Requirements
 
 `gem install rqrcode`
