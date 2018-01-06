@@ -1,8 +1,12 @@
 #
 # QR2GCODE
 # A QR Code to CNC (GRBL/GCODE) converter and generator
-# Jan 2018 - Roman Mittermayr, mittermayr.com
+# January 2018 // Roman Mittermayr // mittermayr.com
+# 
+# Enjoyed this? Drop me a Satoshi if you like:
+# 1CJPbRRRAuxJ1m3SuR3u6NAntzrc5EP5py
 #
+
 require 'rqrcode'
 
 # Settings
@@ -24,7 +28,7 @@ def add(code)
 end
 
 unless ARGV.count.eql? 1
-  puts "\r\nSyntax: ruby generate.rb <string>\r\n\r\n"
+  puts "\r\nSyntax: ruby qr2gcode.rb <string>\r\n\r\n"
   abort
 end
 
