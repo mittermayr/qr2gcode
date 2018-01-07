@@ -90,25 +90,31 @@ qr.modules.each_with_index do |row, ri|
 end
 
 if vertical_refining
+
   # Return to start, then do the same but with vertifal refinements
   add("G1 Z#{z_safe} F#{feed_rate}")
   add("G00 X0 Y0")
-
-  #matrix = matrix.transpose
 
   x = 0
   y = 0
 
   for col in 0..row_length-1
+    is_next_active = false
     for row in 0..row_length-1
 
-      print matrix[row][col] ? "X " : "  "
-
+      was_active_before = is_next_active
       is_next_active = false
       if row < row_length-1
         next_item = matrix[row+1][col]
         is_next_active = true if next_item
       end
+
+      # If this is a 'single dot', then skip here
+      # We are only refining lines, no point in working on that dot again
+      single_dot = true
+      single_dot = false if was_active_before
+      single_dot = false if is_next_active
+      next if single_dot
 
       if matrix[row][col]
         _x = x_home + x

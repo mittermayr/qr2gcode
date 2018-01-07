@@ -16,7 +16,7 @@ This will generate a QR code on the fly (currently Level H, auto-sized), and the
 
 ### Vertical refinement
 
-There is an option to *vertically refine*, which simply means that after the program went through every single row of the code, the mill will then restart at the beginning and go through every column of the print to have lines go through more smoothly vertically as well. This still needs one step of improvement: skip the single dots on the way down.
+There is an option to *vertically refine*, which simply means that after the program went through every single row of the code, the mill will then restart at the beginning and go through every column of the print to have lines go through more smoothly vertically as well.
 
 ### Usage tips
 
